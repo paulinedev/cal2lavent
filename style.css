@@ -1,0 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url("./img/cal2lavent.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
