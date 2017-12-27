@@ -9,7 +9,68 @@
   </head>
     <body>
       <script src="sketch.js"></script>
+<!--
 
+var fenetre;
+var x = 25;
+var y = 75;
+
+//comment cibler les rectangles ?
+//si la fenetre du rectangle est fermer, animation se declanche, sinon la fermer
+function mouseClicked() {
+  if (value == 0) {
+    value = 255;
+  } else {
+    value = 0;
+  }
+}
+
+
+//faut que je cree des retangles par dessus les rectangles bruns
+//que j'active l'animation affilier
+//on peu mettre des function dans des class
+//objets sorte des class-> c'est le resultat
+//dans mousecliked() si mousex=456 et mousey=453 alors declancher l'anim
+//voir p5 collision
+var fenetre;
+var x = 25;
+var y = 75;
+
+function setup() {
+  canvas = createCanvas(780, 200);
+  background(200,222,22);
+
+  fenetre = createButton("ouvre");
+  fenetre.mousePressed(ouvreFenetre);
+  fenetre.position(width/2,170);
+
+  noStroke();
+  fill(236, 36, 94);
+  rect(x, y, 50, 50);
+  }
+
+function ouvreFenetre(){
+    background(200,222,22);
+    fill(94);
+  	rect(x, y, 50, 50);
+    //rect(x+10, y, 50, 50);
+ 		// x = x+10;
+}
+
+//exemple objetsclass Anim1{
+  //Déclaration des paramètres de base de la balle
+  float x;
+  float y;
+  color couleur;
+  //Constructor
+  Balle (float nouvX, float nouvY, color nouvCouleur) {
+   x = nouvX;
+   y = nouvY;
+   couleur = nouvCouleur;
+ }
+}
+
+-->
 
   </body>
 </html>
