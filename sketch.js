@@ -1,10 +1,10 @@
 
 var xpos = 0 //creer une variable dans laquelle on définira la position de x
 var ypos = 0 //creer une variable dans laquelle on définira la position de y
-
+/*
 var i,
     fenetreArray = new Array (12);
-
+*/
 function setup() {
   createCanvas(1530, 768); //canvas sait où est la souris et ce qu'elle fait
   frameRate(100)
@@ -13,19 +13,20 @@ function setup() {
 function draw() {
   background(00,100); //0-->la couleur (rvv) ? 8 --> Alpha (opaciter)
 
-
+/*
   for (var i = 0; i < 12; i++) {
     fenetreArray[i] = new fenetre(150, 250);
-  }
+  }*/
 /*
   if (mouseClicked) {
     if (mouseX > 150 && mouseX < 300 && mouseY > 250 && mouseY < 350 ) {
-      var Un = new anim1;
+      var Un = new fenetre;
     }
     else if (mouseX > 150 && mouseX < 300 && mouseY > 250 && mouseY < 350 ) {
 
     }
   }
+  if(souris sur fenetre1){fenetre1.animationSouhaité}
 */
   fill(115,66,34  );
   //CHALET
@@ -34,21 +35,31 @@ function draw() {
   fill(64,27,3);
   rect(625,600,100,150);
   /*FENETREs*/
+
+
   //LIGNE 1
   rect(150,250,150,100);
+    var fen1 = new fenetre(100, 100, 250, 250);
+      if (mouseX > fen1.x_cote_gauche && mouseX < fen1.x_cote_droite && mouseY > fen1.y_cote_haut && mouseY < fen1.y_cote_bas) {
+        fen1.animationAnim1();
+    }
   rect(350,250,150,100);
+    var fen2 =
   rect(550,250,150,100);
+    var fen3 =
   rect(750,250,150,100);
+    var fen4 =
   rect(950,250,150,100);
+    var fen5 =
   rect(1150,250,150,100);
+    var fen6 = 
   //LIGNE 2
-  rect(150,450,150,100);
-  rect(350,450,150,100);
-  rect(550,450,150,100);
-  rect(750,450,150,100);
-  rect(950,450,150,100);
-  rect(1150,450,150,100);
-
+  var fen7 = rect(150,450,150,100);
+  var fen8 = rect(350,450,150,100);
+  var fen9 = rect(550,450,150,100);
+  var fen10 = rect(750,450,150,100);
+  var fen11 = rect(950,450,150,100);
+  var fen12 = rect(1150,450,150,100);
 
 /* point QUI SUIT LA SOURIS */
     fill(255,227,37);
@@ -57,10 +68,14 @@ function draw() {
   	ellipse(mouseX,mouseY,20,20);
 }
 
-function fenetre(x, y){
-  this.x = x;
-  this.y = y;
-  this.animationFenetre = function(){
+function fenetre(xG, xD, yH, yB){
+  this.x_cote_gauche = xG;
+  this.x_cote_droite = xD;
+  this.y_cote_haut = yH;
+  this.y_cote_bas = yB;
+
+/*
+  this.animationAnim1 = function(){
     function setup() {
     var x = 150;
     var y = 250;
@@ -96,6 +111,6 @@ function renkver(x, y) {
     return ~~(Math.random() * y) + x;
 }
 
-  }
+}*/
 
 }
