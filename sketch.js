@@ -1,6 +1,10 @@
 
 var xpos = 0 //creer une variable dans laquelle on définira la position de x
 var ypos = 0 //creer une variable dans laquelle on définira la position de y
+
+var i,
+    fenetreArray = new Array (12);
+
 function setup() {
   createCanvas(1530, 768); //canvas sait où est la souris et ce qu'elle fait
   frameRate(100)
@@ -10,7 +14,19 @@ function draw() {
   background(00,100); //0-->la couleur (rvv) ? 8 --> Alpha (opaciter)
 
 
+  for (var i = 0; i < 12; i++) {
+    fenetreArray[i] = new fenetre(150, 250);
+  }
+/*
+  if (mouseClicked) {
+    if (mouseX > 150 && mouseX < 300 && mouseY > 250 && mouseY < 350 ) {
+      var Un = new anim1;
+    }
+    else if (mouseX > 150 && mouseX < 300 && mouseY > 250 && mouseY < 350 ) {
 
+    }
+  }
+*/
   fill(115,66,34  );
   //CHALET
   triangle(100, 200, 1350, 200, 675, 20);
@@ -32,15 +48,7 @@ function draw() {
   rect(750,450,150,100);
   rect(950,450,150,100);
   rect(1150,450,150,100);
-/*
-  if (mouseClicked) {
-    if (mouseX > 150 && mouseX < 300 && mouseY > 250 && mouseY < 350 ) {
-      let Un = new anim1;
-    }
-    else if (mouseX > 150 && mouseX < 300 && mouseY > 250 && mouseY < 350 ) {
 
-    }
-  }
 
 /* point QUI SUIT LA SOURIS */
     fill(255,227,37);
@@ -49,9 +57,20 @@ function draw() {
   	ellipse(mouseX,mouseY,20,20);
 }
 
-class anim1{
-  var nokta = 0;//taille du centre du cercle
-  amin1() {
+function fenetre(x, y){
+  this.x = x;
+  this.y = y;
+  this.animationFenetre = function(){
+    function setup() {
+    var x = 150;
+    var y = 250;
+    createCanvas(x, y);
+    frameRate(100)
+
+}
+var nokta = 0;//taille du centre du cercle
+
+function draw() {
     nokta += 0.3;
     noStroke();
     drawingContext.shadowOffsetX = 1; //ombres
@@ -60,7 +79,7 @@ class anim1{
     drawingContext.shadowColor = "black";
     fill(random(200, 255), random(10, 255), random(50, 255));
 
-    imageMode(CENTER)
+   imageMode(CENTER)
     translate(width / 2, height / 2);
     angle = nokta;
     rotate(nokta);
@@ -69,11 +88,14 @@ class anim1{
     ellipse(x, y, 15, 15);
 
     if (nokta > windowWidth / 2) {
-      nokta = 0;
-      background("white")
+        nokta = 0;
+        background("white")
     }
-  }
-  function renkver(x, y) {
+}
+function renkver(x, y) {
     return ~~(Math.random() * y) + x;
+}
+
   }
+
 }
