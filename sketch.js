@@ -42,17 +42,12 @@ function draw() {
     var fen1 = new fenetre(100, 100, 250, 250);
       if (mouseX > fen1.x_cote_gauche && mouseX < fen1.x_cote_droite && mouseY > fen1.y_cote_haut && mouseY < fen1.y_cote_bas) {
         fen1.animationAnim1();
-    }
-  rect(350,250,150,100);
-    var fen2 =
-  rect(550,250,150,100);
-    var fen3 =
-  rect(750,250,150,100);
-    var fen4 =
-  rect(950,250,150,100);
-    var fen5 =
-  rect(1150,250,150,100);
-    var fen6 = 
+      }
+  var fen2 = rect(350,250,150,100);
+  var fen3 = rect(550,250,150,100);
+  var fen4 = rect(750,250,150,100);
+  var fen5 = rect(950,250,150,100);
+  var fen6 = rect(1150,250,150,100);
   //LIGNE 2
   var fen7 = rect(150,450,150,100);
   var fen8 = rect(350,450,150,100);
@@ -74,7 +69,6 @@ function fenetre(xG, xD, yH, yB){
   this.y_cote_haut = yH;
   this.y_cote_bas = yB;
 
-/*
   this.animationAnim1 = function(){
     function setup() {
     var x = 150;
@@ -111,6 +105,6 @@ function renkver(x, y) {
     return ~~(Math.random() * y) + x;
 }
 
-}*/
+}
 
 }
