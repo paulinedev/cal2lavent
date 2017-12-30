@@ -52,9 +52,21 @@ function draw() {
       if (mouseX > fen3.x_cote_gauche && mouseX < fen3.x_cote_droite && mouseY > fen3.y_cote_haut && mouseY < fen3.y_cote_bas) {
         fen3.animationAnim3();
       }
-  var fen4 = rect(750,250,150,100);
-  var fen5 = rect(950,250,150,100);
-  var fen6 = rect(1150,250,150,100);
+  rect(750,250,150,100);
+    var fen4 = new fenetre(100, 100, 250, 250);
+      if (mouseX > fen4.x_cote_gauche && mouseX < fen4.x_cote_droite && mouseY > fen4.y_cote_haut && mouseY < fen4.y_cote_bas) {
+        fen3.animationAnim4();
+      }
+  rect(950,250,150,100);
+    var fen5 = new fenetre(100, 100, 250, 250);
+      if (mouseX > fen5.x_cote_gauche && mouseX < fen5.x_cote_droite && mouseY > fen5.y_cote_haut && mouseY < fen5.y_cote_bas) {
+        fen3.animationAnim5();
+      }
+  rect(1150,250,150,100);
+    var fen6 = new fenetre(100, 100, 250, 250);
+      if (mouseX > fen6.x_cote_gauche && mouseX < fen6.x_cote_droite && mouseY > fen6.y_cote_haut && mouseY < fen6.y_cote_bas) {
+        fen6.animationAnim3();
+      }
   //LIGNE 2
   var fen7 = rect(150,450,150,100);
   var fen8 = rect(350,450,150,100);
@@ -226,7 +238,31 @@ function fenetre(xG, xD, yH, yB){
 */
 //Animation 6
   this.animationAnim5 = function() {
-    
+    this.setup = function() {
+  	   createCanvas(400, 400);
+  	   rectMode(CENTER);
+     }
+    this.draw = function(){
+  	  background(240);
+    	translate(width/2, height/2);
+    	for (var i = 0; i < 8; i++) {
+    		push();
+        fill(230,10,10);
+    		rotate(TWO_PI * i / 8);
+    		var tx = 200 * noise(0.01*frameCount);
+    		translate(tx, 0);
+    		rect(0, 0, 20, 20);
+    		for (var j = 0; j < 6; j++) {
+    			push();
+    			rotate(TWO_PI * j / 6);
+    			var rx = 60 * noise(0.01*frameCount + 10);
+    			rect(rx, 8, 8, 8);
+    			pop();
+    		}
+    		translate()
+    		pop();
+  	  }
+    }
   }
 
 }
